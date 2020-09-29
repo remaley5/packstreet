@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import { login } from '../../store/authentication';
+import { login } from '../../store/reducers/authentication';
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "demo@example.com",
-      password: "password",
+      email: "sophie@email.com",
+      password: "sophie",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateEmail = this.updateValue("email");
@@ -29,17 +29,17 @@ class LoginForm extends Component {
       return <Redirect to="/" />
     }
     return (
-      <main className="centered middled">
+      <main className="login-form">
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
-            placeholder="Email"
+            placeholder="enter your email"
             value={this.state.email}
             onChange={this.updateEmail}
           />
           <input
             type="password"
-            placeholder="Password"
+            placeholder="enter your password"
             value={this.state.password}
             onChange={this.updatePassword}
           />
@@ -52,7 +52,7 @@ class LoginForm extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUserId: state.authentication.id
+    currentUserId: state.auth.id
   };
 };
 

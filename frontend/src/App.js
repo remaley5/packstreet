@@ -2,16 +2,42 @@ import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import LoginForm from './components/session/LoginForm';
-import PokemonBrowserRedux from './components/Browser';
+import LandingPage from './components/LandingPage';
+import HomePage from './components/HomePage';
 
-const PrivateRoute = ({ component: Component, ...rest }) => (
-  <Route {...rest} render={(props) => (
-    rest.needLogin === true
-      ? <Redirect to='/login' />
-      : <Component {...props} />
-  )} />
-)
+// const PrivateRoute = ({ component: Component, ...rest }) => (
+//   <Route {...rest} render={(props) => (
+//     rest.needLogin === true
+//       ? <Redirect to='/login' />
+//       : <Component {...props} />
+//   )} />
+// )
+
+const ProtectedRoute = ({
+  component: Component,
+  loggedIn,
+  ...rest
+}) => {
+  if (loggedIn) {
+    return (
+      <Route {...rest}
+        component={Component}
+      />
+    );
+  }
+  return (
+    <Redirect to="/login" />
+  )
+};
+
+const mapStateToProps = state => {
+  return {
+    loggedIn: !!state.auth.id
+  }
+}
+
+
+const ConnectedProtectedRoute = connect(mapStateToProps, null)(ProtectedRoute);
 
 class App extends React.Component {
 
@@ -19,30 +45,12 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/login" component={LoginForm} />
-          <PrivateRoute
-            path="/"
-            exact={true}
-            needLogin={this.props.needLogin}
-            component={PokemonBrowserRedux}
-          />
-          <PrivateRoute
-            path="/pokemon/:pokemonId"
-            exact={true}
-            needLogin={this.props.needLogin}
-            component={PokemonBrowserRedux}
-          />
+          <Route path="/login" component={LandingPage} />
+          <ConnectedProtectedRoute component={HomePage} />
         </Switch>
       </BrowserRouter>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    currentUserId: state.authentication.id,
-    needLogin: !state.authentication.id,
-  };
-}
-
-export default connect(mapStateToProps)(App);
+export default App;

@@ -64,17 +64,9 @@ const lastNameValidator =
     .isLength({ max: 60 })
     .withMessage('Last name must be less then 60 characters')
 
-const userNameValidator =
-  check('userName')
-    .exists({ checkFalsy: true })
-    .withMessage('Please provide a user name')
-    .isLength({ max: 60 })
-    .withMessage('User name must be less then 100 characters')
-
 const validateSignup = [
   firstNameValidator,
   lastNameValidator,
-  userNameValidator,
   emailSignUpValidator,
   passwordValidator,
   confirmPasswordValidator,

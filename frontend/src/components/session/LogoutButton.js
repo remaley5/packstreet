@@ -1,14 +1,14 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
-import { logout } from '../../store/authentication';
+import { logout } from '../../store/reducers/authentication';
 
 function LogoutButton({ loggedOut, logout }) {
   if (loggedOut) {
     return <Redirect to="/login" />
   }
   return (
-    <div id="logout-button-holder">
+    <div id="logout-button">
       <button onClick={logout}>Logout</button>
     </div>
   );
@@ -16,7 +16,7 @@ function LogoutButton({ loggedOut, logout }) {
 
 const mapStateToProps = state => {
   return {
-    loggedOut: !state.authentication.id
+    loggedOut: !state.auth.id
   };
 };
 

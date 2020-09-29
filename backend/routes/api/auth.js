@@ -8,9 +8,7 @@ const bcrypt = require('bcryptjs');
 
 const router = express.Router();
 
-//endpoint to generate 2nd token that
 
-//full route /api/auth/signup
 router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
     // check for errors (validateLogin)
     const errors = validationResult(req);
@@ -30,12 +28,11 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
     const {
       firstName,
       lastName,
-      userName,
       email,
       password
     } = req.body;
 
-    console.log('firstname', firstName, lastName, userName, email, password);
+    console.log('firstname', firstName, lastName, email, password);
     //hash given password
     const hashedPassword = await bcrypt.hash(password, 10);
 
@@ -46,7 +43,6 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
     const user = await User.create({
       firstName,
       lastName,
-      username:userName,
       email,
       hashedPassword
     });

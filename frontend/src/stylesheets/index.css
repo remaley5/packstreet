@@ -3,3 +3,24 @@
 .active {
     font-weight: bold;
   }
+
+form {
+  width: 300px;
+  margin: auto;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  margin: 10px;
+  border: 1px solid rgb(195, 195, 221);
+  box-shadow: 0 0 6px rgba(183, 219, 217, 0.247);
+}
+
+button {
+  margin: 10px;
+  background-color: cornsilk;
+  border-radius: 10px;
+  border: 1px solid rgb(209, 183, 173);
+  padding: 7px;
+}
