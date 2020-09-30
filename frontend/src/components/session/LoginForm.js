@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/reducers/authentication';
+import { FormControl, Button, TextField } from '@material-ui/core';
 
 class LoginForm extends Component {
   constructor(props) {
@@ -31,19 +32,19 @@ class LoginForm extends Component {
     return (
       <main className="login-form">
         <form onSubmit={this.handleSubmit}>
-          <input
+          <TextField
             type="text"
             placeholder="enter your email"
             value={this.state.email}
             onChange={this.updateEmail}
           />
-          <input
+          <TextField
             type="password"
             placeholder="enter your password"
             value={this.state.password}
             onChange={this.updatePassword}
           />
-          <button type="submit">Login</button>
+          <Button type="submit">Login</Button>
         </form>
       </main>
     );

@@ -1,7 +1,10 @@
+import { Container } from "@material-ui/core";
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import LoginForm from './session/LoginForm';
 import SignupForm from "./session/SignupForm";
+import Navigation from "./Navigation";
+
 
 class HomePage extends Component {
   constructor(props) {
@@ -12,10 +15,11 @@ class HomePage extends Component {
 
   render() {
     return (
-      <main>
-        <LoginForm />
-        <SignupForm />
-        <div id='logged-out-message'>You're logged out!</div>
+      <main className='landing-page'>
+        <Container>
+          <LoginForm />
+          <SignupForm />
+        </Container>
       </main>
     );
   }

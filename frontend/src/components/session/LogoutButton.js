@@ -2,15 +2,14 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 import { logout } from '../../store/reducers/authentication';
+import Button from '@material-ui/core/Button';
 
 function LogoutButton({ loggedOut, logout }) {
   if (loggedOut) {
     return <Redirect to="/login" />
   }
   return (
-    <div id="logout-button">
-      <button onClick={logout}>Logout</button>
-    </div>
+      <Button onClick={logout}>Logout</Button>
   );
 }
 

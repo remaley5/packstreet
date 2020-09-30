@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as authActions from '../../store/reducers/authentication'
+import { FormControl, Button, TextField } from '@material-ui/core';
 
-
-class SignupForm extends Component {
+class SignupFormControl extends Component {
         constructor(props) {
           super(props);
           this.state = {
@@ -35,8 +35,6 @@ class SignupForm extends Component {
             this.state.password,
             this.state.confirmPassword
         );
-
-        document.getElementById('logged-out-message').innerHTML = `You're signed up with ${this.state.email}`
         // this.props.login(this.state.email, this.state.password)
     };
 
@@ -54,37 +52,37 @@ class SignupForm extends Component {
         return(
             <main className="signup-form">
                 <form onSubmit={this.handleSubmit}>
-                    <input
+                    <TextField
                         type='text'
                         placeholder='first name'
                         value={this.state.firstName}
                         onChange={this.updateFirstName}
                     />
-                    <input
+                    <TextField
                         type='text'
                         placeholder='last name'
                         value={this.state.lastName}
                         onChange={this.updateLastName}
                     />
-                    <input
+                    <TextField
                         type='email'
                         placeholder='email'
                         value={this.state.email}
                         onChange={this.updateEmail}
                     />
-                    <input
+                    <TextField
                         type='text'
                         placeholder='password'
                         value={this.state.password}
                         onChange={this.updatePassword}
                     />
-                    <input
+                    <TextField
                         type='text'
                         placeholder='confirmPassword'
                         value={this.state.confirmPassword}
                         onChange={this.updateConfirmPassword}
                     />
-                    <button type='submit'>Sign Up!</button>
+                    <Button type='submit'>Sign Up!</Button>
                 </form>
             </main>
         )
@@ -107,4 +105,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupFormControl);

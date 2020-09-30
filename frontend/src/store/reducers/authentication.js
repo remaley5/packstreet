@@ -49,8 +49,8 @@ function loadUser() {
       const decodedPayload = atob(payload);
       const payloadObj = JSON.parse(decodedPayload);
       console.log(payloadObj);
-      const { data } = payloadObj;
-      return data;
+      const { user } = payloadObj;
+      return user;
     } catch (e) {
       Cookies.remove("token");
     }
