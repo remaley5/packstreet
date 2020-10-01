@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
-import DefaultPackageOne from './components/default-packages/DefaultPackageOne';
-import SavedPackages from './components/saved-packages/SavedPackages';
+import DefaultPackageOne from './components/packages/DefaultPackageOne';
+import SavedPackages from './components/packages/SavedPackages';
 import LandingPage from './components/LandingPage';
 import HomePage from './components/HomePage';
 import Navigation from './components/Navigation';
+import DesignPage from './components/designs/DesignPage'
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 //   <Route {...rest} render={(props) => (
@@ -51,6 +52,7 @@ class App extends React.Component {
           <Route path="/login" component={LandingPage} />
           <Route path="/package/1" component={DefaultPackageOne} />
           <Route path="/my-packages" component={SavedPackages} />
+          <Route path="/design" component={DesignPage} />
           <ConnectedProtectedRoute component={HomePage} />
         </Switch>
       </BrowserRouter>

@@ -20,6 +20,14 @@ module.exports = {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'SavedPackageDesigns' }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

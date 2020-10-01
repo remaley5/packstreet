@@ -54,4 +54,6 @@ function restoreUser(req, res, next) {
   });
 }
 
-module.exports = { generateToken, restoreUser };
+const authenticated = [restoreUser];
+
+module.exports = { generateToken, restoreUser, authenticated};

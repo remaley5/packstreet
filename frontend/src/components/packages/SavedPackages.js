@@ -1,5 +1,7 @@
+import { Container } from "@material-ui/core";
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
 
 class SavedPackages extends Component {
   constructor(props) {
@@ -10,9 +12,9 @@ class SavedPackages extends Component {
 
   render() {
     return (
-      <div className='saved-packages'>
-          "My packages"
-      </div>
+        <Container>
+          <div>Your saved packages</div>
+        </Container>
     );
   }
 }

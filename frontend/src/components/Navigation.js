@@ -1,27 +1,26 @@
 import React from 'react';
-import {Breadcrumbs, Link} from '@material-ui/core';
 import { NavLink } from 'react-router-dom';
 import LogoutButton from "./session/LogoutButton";
 
 
-function handleClick(event) {
-    event.preventDefault();
-    console.info('You clicked a link');
-}
-
-export default function SimpleBreadcrumbs() {
+export default function NavBar() {
     return (
-        <Breadcrumbs>
-            <NavLink to="/">
-                home
-            </NavLink>
-            <NavLink to="/package/1">
-                package
-            </NavLink>
-            <NavLink to="/my-packages">
-                my designs
-            </NavLink>
-            <LogoutButton/>
-        </Breadcrumbs>
+        <div className='navbar'>
+            <div className='navbar__container'>
+                <NavLink className='navbar__link navbar__home' to="/">
+                    home
+                </NavLink>
+                <NavLink className='navbar__link navbar__package' to="/package/1">
+                    package
+                </NavLink>
+                <NavLink className='navbar__link navbar__my-packages' to="/my-packages">
+                    my designs
+                </NavLink>
+                <NavLink className='navbar__link navbar__design' to="/design">
+                    design
+                </NavLink>
+                <LogoutButton />
+            </div>
+        </div>
     );
 };

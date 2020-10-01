@@ -22,7 +22,7 @@ module.exports = {
       depthOptions: {
         type: Sequelize.ARRAY(Sequelize.INTEGER)
       },
-      description: {
+      description1: {
         type: Sequelize.TEXT(900),
         allowNull: false
       },
@@ -33,6 +33,14 @@ module.exports = {
       unitPrice: {
         type: Sequelize.INTEGER,
         allowNull: false
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
       }
     });
   },

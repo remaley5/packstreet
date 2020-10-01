@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Container, button } from '@material-ui/core';
 import econoflex from '../images/econoflex.png'
 import folding from '../images/folding.png'
 import mailer from '../images/mailer.png'
@@ -9,10 +8,12 @@ import inspoMailer1 from '../images/inspiration-images/inspo-mailer-box-1.jpg'
 import inspoFolder1 from '../images/inspiration-images/inspo-folding-carton-1.jpg';
 import inspoShipper1 from '../images/inspiration-images/inspo-shipping-box-1.jpg'
 import inspoEconoflex1 from '../images/inspiration-images/inspo-econoflex-1.jpg';
-import inspoMailer2 from '../images/inspiration-images/inspo-mailer-box.jpg';
+import inspoMailer2 from '../images/inspiration-images/inspo-mailer-box-2.jpg';
 import inspoFolder2 from '../images/inspiration-images/inspo-folding-carton-2.jpg';
 import inspoShipper2 from '../images/inspiration-images/inspo-shipping-box-2.jpg';
 import inspoEconoflex2 from '../images/inspiration-images/inspo-econoflex-2.jpg'
+import { getPackageBases } from "../store/reducers/packages";
+import ConnectedPackageBases from './packages/ConnectedPackageBases'
 
 const inspoImages = [
   inspoMailer1,
@@ -33,57 +34,29 @@ class HomePage extends Component {
     };
   }
 
+  componentDidMount() {
+    this.props.getPackageBases()
+  }
+
   render() {
     return (
       <>
         <div className='homepage'>
           <div className='homepage__header-section'>
-            <h1 className='homepage__section-header'>Create custom packaging</h1>
-            <p className='homepage__section-description'>Custom packaging can turn your brand into the total package with full customization, instant quoting, and fast turnarounds.</p>
-            <button className='homepage__button'>CHOOSE YOUR STYLE</button>
+            <h1 className='section-header'>Create custom packaging</h1>
+            <p className='section-description'>Custom packaging can turn your brand into the total package with full customization, instant quoting, and fast turnarounds.</p>
+            <button className='section-button'>CHOOSE YOUR STYLE</button>
             <p className='homepage__header-section__brand-header'>trusted by over 2,500 companies</p>
             <div>logos go here</div>
           </div>
-          <div className='homepage__choose-style-section'>
-            <h1 className='homepage__section-header background-gray'>Choose your custom box style</h1>
-            <div className='homepage__choose-style-section__packages'>
-              <div className='homepage__choose-style-section__package'>
-                <img src={mailer} alt='custom mailer' className='homepage__choose-style-section__image' />
-                <div className='homepage__choose-style-section__package-name'>Mailer Box</div>
-                <div className='homepage__choose-style-section__learn-more'>Learn more</div>
-                <button className='homepage__button'>Meet our mailer</button>
-              </div>
-
-              <div className='homepage__choose-style-section__package'>
-                <img src={folding} alt='folding carton' className='homepage__choose-style-section__image' />
-                <div className='homepage__choose-style-section__package-name'>Folding Carton</div>
-                <div className='homepage__choose-style-section__learn-more'>Learn more</div>
-                <button className='homepage__button'>Meet our carton</button>
-              </div>
-
-              <div className='homepage__choose-style-section__package'>
-                <img src={shipping} alt='shipping box' className='homepage__choose-style-section__image' />
-                <div className='homepage__choose-style-section__package-name'>Shipping Box</div>
-                <div className='homepage__choose-style-section__learn-more'>Learn more</div>
-                <button className='homepage__button'>Meet our shipper</button>
-              </div>
-
-              <div className='homepage__choose-style-section__package'>
-                <img src={econoflex} alt='econoflex shipping box' className='homepage__choose-style-section__image' />
-                <div className='homepage__choose-style-section__package-name'>Econoflex Shipping Box</div>
-                <div className='homepage__choose-style-section__learn-more'>Learn more</div>
-                <button className='homepage__button'>Meet econoflex shippers</button>
-              </div>
-            </div>
-          </div>
-
+          <ConnectedPackageBases />
           <div className='homepage__demo-container'>
-            <h1 className='homepage__section-header'>See how to succeed with custom packaging</h1>
+            <h1 className='section-header'>See how to succeed with custom packaging</h1>
           </div>
 
           <div className='homepage__get-inspired-container'>
-            <h1 className='homepage__section-header'>Get inspired</h1>
-            <p className='homepage__section-description'>We’re here to help. Whether you’re designing custom gift boxes with your logo or need help with your box design, there’s lots of inspiration to be found for your custom product packaging.</p>
+            <h1 className='section-header'>Get inspired</h1>
+            <p className='section-description'>We’re here to help. Whether you’re designing custom gift boxes with your logo or need help with your box design, there’s lots of inspiration to be found for your custom product packaging.</p>
             <div className='homepage__get-inspired__image-container'>
               {inspoImages.map((image, i) =>(
                 <div className={`inspo-${i}`}><img src={image} className='inspo-image'/></div>
@@ -98,9 +71,15 @@ class HomePage extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    state
+    packageBases: state.packages.packageBases
   };
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    getPackageBases: packageBases => dispatch(getPackageBases(packageBases))
+  }
+}
 
-export default connect(mapStateToProps)(HomePage);
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
