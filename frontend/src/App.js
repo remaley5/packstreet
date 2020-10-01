@@ -6,7 +6,7 @@ import SavedPackages from './components/packages/SavedPackages';
 import LandingPage from './components/LandingPage';
 import HomePage from './components/HomePage';
 import Navigation from './components/Navigation';
-import DesignPage from './components/designs/DesignPage'
+import DesignPage from './components/DesignPage'
 
 // const PrivateRoute = ({ component: Component, ...rest }) => (
 //   <Route {...rest} render={(props) => (

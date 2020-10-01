@@ -1,6 +1,8 @@
 import React from 'react';
 
-const PackageBase = ({ packageBase }) => {
+import DesignRenderDropDown from './DesignRenderDropdown';
+
+const DesignComponents = ({ packageBase }) => {
     // console.log('packageBase in component', packageBase)
     // console.log('packagebaseImage', `image/${packageBase.defaultImage}`)
 
@@ -39,22 +41,13 @@ const PackageBase = ({ packageBase }) => {
                         4" x 4" x 2"
                     </div>
                 </div>
-                <div className='design-page__box-rendering-container'>
-                    <div className='design-page__box-rendering-container__select-side'>
-                        <div className='design-page__box-rendering-container__select-side__label'>
-                            Select side
-                        </div>
-                        <div className='design-page__box-rendering-container__select-side__dropdown'>
-                            <button className='dropdown-button' type='button'></button>
-                        </div>
-                    </div>
-                    <div className='design-page__box-rendering-container__render'></div>
-                </div>
+                <DesignRenderDropDown />
                 <div className='design-page__info-bar-right'>
                     <div className='design-page__info-bar-right__box-name'>{packageBase.name}</div>
                     <div className='design-page__info-bar-right__description'>{packageBase.description1}</div>
                     <div className='design-page__info-bar-right__info'>
                         <table>
+                            <tbody>
                             <tr>
                                 <th className='design-page__info-bar-right__info title'>Size</th>
                                 <td className='design-page__info-bar-right__info__value'>10" x 8" x 4"</td>
@@ -75,6 +68,7 @@ const PackageBase = ({ packageBase }) => {
                                 <th className='design-page__info-bar-right__info title subtotal'>Subtotal</th>
                                 <td className='design-page__info-bar-right__info__value'>$655.00</td>
                             </tr>
+                            </tbody>
                         </table>
                         <button className='design-page__info-bar-right__button'>Checkout</button>
                     </div>
@@ -84,4 +78,4 @@ const PackageBase = ({ packageBase }) => {
     )
 };
 
-export default PackageBase;
+export default DesignComponents;

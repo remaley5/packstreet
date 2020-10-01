@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/reducers/authentication';
-import { FormControl, Button, TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 class LoginForm extends Component {
   constructor(props) {

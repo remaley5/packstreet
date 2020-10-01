@@ -1,17 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import econoflex from '../images/econoflex.png'
-import folding from '../images/folding.png'
-import mailer from '../images/mailer.png'
-import shipping from '../images/shipping.png'
 import inspoMailer1 from '../images/inspiration-images/inspo-mailer-box-1.jpg'
 import inspoFolder1 from '../images/inspiration-images/inspo-folding-carton-1.jpg';
 import inspoShipper1 from '../images/inspiration-images/inspo-shipping-box-1.jpg'
 import inspoEconoflex1 from '../images/inspiration-images/inspo-econoflex-1.jpg';
 import inspoMailer2 from '../images/inspiration-images/inspo-mailer-box-2.jpg';
 import inspoFolder2 from '../images/inspiration-images/inspo-folding-carton-2.jpg';
-import inspoShipper2 from '../images/inspiration-images/inspo-shipping-box-2.jpg';
-import inspoEconoflex2 from '../images/inspiration-images/inspo-econoflex-2.jpg'
 import { getPackageBases } from "../store/reducers/packages";
 import ConnectedPackageBases from './packages/ConnectedPackageBases'
 

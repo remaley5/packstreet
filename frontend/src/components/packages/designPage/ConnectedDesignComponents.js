@@ -1,9 +1,9 @@
 import React from 'react';
-import PackageBase from './PackageBase';
+import DesignComponents from './DesignComponents';
 import { connect } from 'react-redux';
-import { getPackageBase } from '../../store/reducers/packages';
+import { getPackageBase } from '../../../store/reducers/packages';
 
-class ConnectedPackageBase extends React.Component {
+class ConnectedDesignComponentsComponents extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -16,7 +16,7 @@ class ConnectedPackageBase extends React.Component {
     render() {
         console.log('package base', this.props.packageBase)
         return (
-            <PackageBase
+            <DesignComponents
                 packageBase={this.props.packageBase}
             />
         )
@@ -36,4 +36,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(ConnectedPackageBase);
+)(ConnectedDesignComponentsComponents);

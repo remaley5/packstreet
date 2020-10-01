@@ -1,0 +1,71 @@
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.render-container {
+  width: 200px;
+  height: 200px;
+  margin: 80px;
+  perspective: 400px;
+}
+
+.cube {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: translateZ(-100px);
+  transition: transform 1s;
+}
+
+.cube.show-front  { transform: translateZ(-100px) rotateY(   20deg); }
+.cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
+.cube.show-back   { transform: translateZ(-100px) rotateY(-150deg); }
+.cube.show-left   { transform: translateZ(-100px) rotateY(  70deg); }
+.cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
+.cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+
+.cube__face {
+  background-image: url('../images/cardboard-box.jpg');
+  background-size: contain;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: none;
+  line-height: auto;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: wrap;
+}
+
+/* .cube__face--front  { background: rgb(235, 135, 135); }
+.cube__face--right  { background: rgb(223, 223, 171); }
+.cube__face--back   { background: rgb(131, 165, 131); }
+.cube__face--left   { background: rgb(153, 211, 211); }
+.cube__face--top    { background: rgb(149, 149, 192); }
+.cube__face--bottom { background: rgb(223, 195, 223); } */
+
+
+/* CUBE:
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); } */
+
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+label { margin-right: 10px; }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import ConnectedPackageBase from '../packages/ConnectedPackageBase';
+import ConnectedDesignComponents from './packages/designPage/ConnectedDesignComponents';
 
 class DesignPage extends Component {
     constructor(props) {
@@ -12,7 +12,7 @@ class DesignPage extends Component {
     render() {
         return (
             <>
-                <ConnectedPackageBase />
+                <ConnectedDesignComponents />
             </>
         );
     }
