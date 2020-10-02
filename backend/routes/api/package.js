@@ -12,7 +12,6 @@ router.get('/bases', asyncHandler(async function(req, res) {
 }));
 
 router.get('/bases/:id', asyncHandler(async function(req, res) {
-    console.log(req.params.id)
     const packageBase = await PackageBase.findByPk(req.params.id)
     res.json(packageBase);
 }))

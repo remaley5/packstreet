@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as authActions from '../../store/reducers/authentication'
-import { FormControl, Button, TextField } from '@material-ui/core';
+import { Button, TextField } from '@material-ui/core';
 
 class SignupFormControl extends Component {
         constructor(props) {
@@ -26,8 +26,6 @@ class SignupFormControl extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
 
-        console.log('this.props', this.props);
-
         await this.props.signup(
             this.state.firstName,
             this.state.lastName,
@@ -39,7 +37,6 @@ class SignupFormControl extends Component {
     };
 
     updateValue (name) {
-        console.log('updating..', name)
         return (e) => {
           this.setState({ [name]: e.target.value });
         }

@@ -45,7 +45,6 @@ export const getOnePackage = (id) => async (dispatch) => {
 };
 
 export const getPackages = () => async dispatch => {
-  console.log('in get packages');
   // const res = await fetch('/api/packages');
   // if (res.ok) {
   //   const data = await res.json();

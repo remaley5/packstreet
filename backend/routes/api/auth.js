@@ -13,14 +13,10 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
     // check for errors (validateLogin)
     const errors = validationResult(req);
     const data = req.body;
-    console.log('data', data);
-    console.log('ERRORS', errors);
 
 
     // if there are errors, stop the function and pass object to next error-handling middleware in app.js
     if (!errors.isEmpty()) {
-      console.log('IN ERRORS')
-      console.log(errors);
       return next({ status: 422, errors: errors.array() });
     }
 
@@ -31,24 +27,15 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
       email,
       password
     } = req.body;
-
-    console.log('firstname', firstName, lastName, email, password);
     //hash given password
     const hashedPassword = await bcrypt.hash(password, 10);
-
-    console.log('hashedPassword', hashedPassword)
     //build a new user object
-
-    console.log('CREATING USER')
     const user = await User.create({
       firstName,
       lastName,
       email,
       hashedPassword
     });
-
-    console.log('HERE')
-    console.log(user)
     //generate a token
     const { jti, token } = generateToken(user);
 
@@ -57,7 +44,6 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
 
     //save newUser with tokenId to DB
     await user.save();
-    console.log('AFTERSAVE')
 
     //respond with a cookie token to be set in authentication reducer as initial state via loadUser() function
     res.cookie("token", token);
@@ -69,7 +55,6 @@ router.post('/signup', validateSignup, asyncHandler(async (req, res, next) => {
 router.put('/login', validateLogin, asyncHandler(async (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
-    console.log(errors)
       return next({ status: 422, errors: errors.array() });
     }
 
@@ -93,7 +78,6 @@ router.put('/login', validateLogin, asyncHandler(async (req, res, next) => {
 
     //if it is not a valid password, send error to error handling middleware
     if (!isValidPassword ) {
-      console.log("Invalid password")
       const err = new Error('Login failed');
       err.status = 401;
       err.title = 'Login failed';

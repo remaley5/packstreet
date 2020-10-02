@@ -11,7 +11,6 @@ const receivePackageBases = (packageBases) => {
 };
 
 const receivePackageBase = (packageBase) => {
-    console.log('in recievePackageBase', packageBase)
     return {
         type: RECEIVE_PACKAGE_BASE,
         packageBase
@@ -19,23 +18,19 @@ const receivePackageBase = (packageBase) => {
 };
 
 export const getPackageBases = () => {
-    console.log('in get PackageBases')
     return async (dispatch) => {
         const res = await fetch('/api/package/bases');
         const data = await res.json();
         dispatch(receivePackageBases(data));
-        console.log('data', data)
         return data;
     };
 };
 
 export const getPackageBase = (id) => {
-    console.log('in getPackageBase')
     return async (dispatch) => {
         const res = await fetch(`/api/package/bases/${id}`)
         const data = await res.json();
         dispatch(receivePackageBase(data));
-        console.log('in the fetch', data)
         return data;
     };
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const PackageBases = ({packageBases}) => {
-    console.log(packageBases)
     return (
             <div className='homepage__choose-style-section'>
                 <h1 className='section-header background-gray'>Choose your custom box style</h1>

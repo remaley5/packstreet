@@ -41,14 +41,12 @@ export const login = (email, password) => {
 };
 
 function loadUser() {
-  console.log('loadUser')
   const authToken = Cookies.get("token");
   if (authToken) {
     try {
       const payload = authToken.split(".")[1];
       const decodedPayload = atob(payload);
       const payloadObj = JSON.parse(decodedPayload);
-      console.log(payloadObj);
       const { user } = payloadObj;
       return user;
     } catch (e) {

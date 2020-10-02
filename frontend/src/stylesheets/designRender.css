@@ -18,6 +18,9 @@ body { font-family: sans-serif; }
   transition: transform 1s;
 }
 
+.box-image {
+    width: 100%;
+}
 .cube.show-front  { transform: translateZ(-100px) rotateY(   20deg); }
 .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
 .cube.show-back   { transform: translateZ(-100px) rotateY(-150deg); }
@@ -68,4 +71,11 @@ body { font-family: sans-serif; }
 .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
 
+/*
+.cube-face--right,
+.cube-face--left,
+.cube-face--back,
+.cube-face--front {
+    height: 300px;
+}  */
 label { margin-right: 10px; }

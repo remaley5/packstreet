@@ -1,47 +1,14 @@
 import React from 'react';
 
-import DesignRenderDropDown from './DesignRenderDropdown';
+import Render from './Render';
+import LeftChoices from './LeftChoices'
 
 const DesignComponents = ({ packageBase }) => {
-    // console.log('packageBase in component', packageBase)
-    // console.log('packagebaseImage', `image/${packageBase.defaultImage}`)
-
-    // console.log('packagebase in compoonent dimensions', packageBase.widthOptions);
-
     return (
         <>
             <div className='design-page'>
-                <div className='design-page__option-bar-left'>
-                    <div className='design-page__option-bar-left__option'></div>
-                    <div className='design-page__option-bar-left__option'></div>
-                    <div className='design-page__option-bar-left__option'></div>
-                    <div className='design-page__option-bar-left__option'></div>
-                    <div className='design-page__option-bar-left__option'></div>
-                </div>
-                <div className='design-page__option-bar-left__drop-down'>
-                    <div className='design-page__option-bar-left__drop-down__header'>
-                        Select stock size
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                    <div className='design-page__option-bar-left__drop-down__option'>
-                        4" x 4" x 2"
-                    </div>
-                </div>
-                <DesignRenderDropDown />
+                <LeftChoices />
+                <Render />
                 <div className='design-page__info-bar-right'>
                     <div className='design-page__info-bar-right__box-name'>{packageBase.name}</div>
                     <div className='design-page__info-bar-right__description'>{packageBase.description1}</div>

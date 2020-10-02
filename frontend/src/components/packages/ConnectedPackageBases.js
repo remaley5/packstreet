@@ -9,12 +9,10 @@ class ConnectedPackageBases extends React.Component {
     }
 
     componentDidMount() {
-        console.log('IN COMPONENT DID MOUNT')
         this.props.getPackageBases();
     }
 
     render() {
-        console.log("RENDERING")
         return (
             <PackageBases
                 packageBases={this.props.packageBases}
