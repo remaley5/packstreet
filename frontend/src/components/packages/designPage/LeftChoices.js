@@ -1,24 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setCurrentDropdown } from '../../../store/reducers/design';
+import AddText from './addText/AddText';
+import AddQuantity from './AddQuantity';
+import AddImages from './AddImages';
 
-const options = ['size', 'material', 'design', 'quantity', 'reset'];
+const options = ['text', 'images', 'quantity'];
 
 class LeftChoices extends Component {
     constructor(props) {
         super(props)
-        this.state = {
+        this.setState = {
         }
     }
 
-    capitalize = (choice) => {
-        if (typeof choice !== 'string') return ''
-        return choice.charAt(0).toUpperCase() + choice.slice(1)
-    }
+    // capitalize = (choice) => {
+    //     if (typeof choice !== 'string') return ''
+    //     const capitalized =  choice.charAt(0).toUpperCase() + choice.slice(1)
+    //     return `Add${capitalized}`
+    // }
 
     changeDropdown = (e) => {
-        const component = this.capitalize(e.target.value)
-        this.props.setCurrentDropdown(component);
+        this.props.setCurrentDropdown(e.target.value)
+    }
+
+    handleReset = () => {
+        console.log('resetting')
     }
 
     render() {
@@ -31,8 +38,12 @@ class LeftChoices extends Component {
                                 <button type="button" name={option} className='design-page__option-bar-left__option' value={option} onClick={this.changeDropdown} >{option}</button>
                             )
                         })}
+                        <button type='button' name='reset' className='design-page__option-bar-left__option' onClick={this.handleReset}>reset</button>
                     </div>
                 </div>
+                <AddText currentDropdown={this.props.currentDropdown}/>
+                <AddQuantity currentDropdown={this.props.currentDropdown}/>
+                <AddImages currentDropdown={this.props.currentDropdown}/>
             </>
         )
     }

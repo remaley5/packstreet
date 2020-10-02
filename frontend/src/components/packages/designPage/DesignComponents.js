@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 
 import Render from './Render';
 import LeftChoices from './LeftChoices'
 
-const DesignComponents = ({ packageBase }) => {
+
+const DesignComponents = ({packageBase, currentDropdown}) => {
+
     return (
         <>
             <div className='design-page'>

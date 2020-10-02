@@ -16,7 +16,7 @@ class ConnectedDesignComponentsComponents extends React.Component {
     render() {
         return (
             <DesignComponents
-                packageBase={this.props.packageBase} currentDropDown={this.props.currentDropDown}
+                packageBase={this.props.packageBase} currentDropdown={this.props.currentDropdown}
             />
         )
     }
@@ -25,7 +25,7 @@ class ConnectedDesignComponentsComponents extends React.Component {
 const mapStateToProps = (state) => {
     return {
         packageBase: state.packages.packageBase,
-        currentDropDown: state.packages.currentDropDown
+        currentDropdown: state.design.currentDropdown
     }
 };
 

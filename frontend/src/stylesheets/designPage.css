@@ -1,3 +1,7 @@
+.hidden {
+    display: none
+}
+
 .design-page {
     padding-top: 200px;
     display: grid;

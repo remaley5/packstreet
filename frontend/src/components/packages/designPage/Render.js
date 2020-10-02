@@ -26,7 +26,7 @@ class Render extends Component {
                             <div className={`cube show-${this.props.currentSide}`}>
                                 {sides.map(side => {
                                     return (
-                                        <div className={`cube__face cube__face--${side}`}>{side}</div>
+                                        <div className={`cube__face cube__face--${side}`}></div>
                                     )
                                 })}
                             </div>
