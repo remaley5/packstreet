@@ -4,6 +4,7 @@ const asyncHandler = require('express-async-handler');
 const { TextStyle, ImageStyle, PackageFace, PackageBase, SavedPackageDesign } = require('../../db/models');
 const {authenticated} = require('./security-utils')
 
+
 const router = express.Router();
 
 router.get('/bases', asyncHandler(async function(req, res) {
@@ -16,6 +17,23 @@ router.get('/bases/:id', asyncHandler(async function(req, res) {
     res.json(packageBase);
 }))
 
+router.get('/my-designs/:id', asyncHandler(async function(req, res) {
+
+    const designs = await SavedPackageDesign.findAll({
+        where: {
+            userId: req.params.id
+        },
+        include: [{
+            model: PackageFace,
+                include: [{
+                model: ImageStyle,
+                model: TextStyle
+            }]
+            }]
+    });
+    res.json({designs});
+}))
+
 router.post('/save', asyncHandler(async function(req, res) {
     const { userId, designState } = req.body;
 
@@ -23,7 +41,7 @@ router.post('/save', asyncHandler(async function(req, res) {
     const newSavedPackageDesign = await SavedPackageDesign.create({
         name: designState.name,
         userId: userId,
-        packageBaseId: designState.packageBaseId
+        packageBaseId: 2
     });
 
     const textStyles = [];

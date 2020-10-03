@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import image from '../../../images/package-choices/image-choice-spider.png';
 
 
-const RenderBox = ({currentSide, designState}) => {
+const RenderBox = ({currentSide, packageFaces}) => {
 
-    console.log('faces', designState.savedPackageDesign);
-    const faces = designState.savedPackageDesign.packageFaces;
+    console.log('faces', packageFaces);
+    const faces = packageFaces;
 
     const right = faces.right;
     const left = faces.left;
@@ -14,24 +14,32 @@ const RenderBox = ({currentSide, designState}) => {
     const bottom = faces.bottom;
     const back = faces.back;
     const front = faces.front;
+    console.log('BOTTOM COLOR', bottom.textStyle.color)
 
     var Right = styled.div`
-    color: ${right.textStyle.color}
+    color: ${right.textStyle.color};
+    font-family: ${right.textStyle.font};
+    font-size: ${right.textStyle.fontSize}
 `
     var Left = styled.div`
     color: ${left.textStyle.color}
+    font-family: ${left.textStyle.font};
 `
     var Front = styled.div`
     color: ${front.textStyle.color}
+    font-family: ${front.textStyle.font};
 `
     var Back = styled.div`
     color: ${back.textStyle.color}
+    font-family: ${back.textStyle.font};
 `
     var Top = styled.div`
     color: ${top.textStyle.color}
+    font-family: ${top.textStyle.font};
 `
     var Bottom = styled.div`
     color: ${bottom.textStyle.color}
+    font-family: ${bottom.textStyle.font};
 `
 
     return (

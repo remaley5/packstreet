@@ -1,5 +1,6 @@
 import { SIGNUP } from './authentication';
 
+
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign( {}, state);

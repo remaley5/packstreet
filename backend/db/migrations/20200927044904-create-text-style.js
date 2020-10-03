@@ -10,7 +10,7 @@ module.exports = {
       },
       text: {
         type: Sequelize.TEXT(255),
-        allowNull: false
+        allowNull: true
       },
       fontSize: {
         type: Sequelize.INTEGER,

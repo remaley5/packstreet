@@ -33,6 +33,13 @@ body { font-family: sans-serif; }
 .cube.show-left   { transform: translateZ(-100px) rotateY(  70deg); }
 .cube.show-top    { transform: translateZ(-100px) rotateX( -90deg); }
 .cube.show-bottom { transform: translateZ(-100px) rotateX(  90deg); }
+.cube.show-show   { transform: translateZ(-600px) rotateY(  70deg) rotate(-10deg); }
+.show-container {
+  width: 200px;
+  height: 200px;
+  margin: 80px;
+  perspective: 1000px;
+}
 
 .cube__face {
   background-image: url('../images/cardboard-box.jpg');
@@ -66,13 +73,51 @@ body { font-family: sans-serif; }
 .cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
 .cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); } */
 
+.shadow-side {
+  box-shadow: inset 0px 0px 20px 100px rgba(0, 0, 0, 0.171);
+}
 
-.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
-.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
-.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
-.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
-.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
-.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+.light-side {
+  box-shadow: inset 0px 0px 20px 100px rgba(255, 255, 255, 0.171);
+}
+.cube__face--front  {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateY(  0deg) translateZ(100px);
+}
+
+.cube__face--right  {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateY( 90deg) translateZ(100px);
+}
+
+.cube__face--left   {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.cube__face--back   {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateY(180deg) translateZ(100px);
+}
+
+.cube__face--top    {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateX( 90deg) translateZ(100px);
+}
+
+.cube__face--bottom {
+  border: 1px solid rgb(133, 95, 59);
+  transform: rotateX(-90deg)
+  translateZ(100px);
+}
+
+.cube-shadow {
+  width: 400px;
+  height: 200px;
+  background-color: rgba(107, 105, 105, 0.39);
+  box-shadow: inset 0px 0px 25px 20px white;
+  transform: rotateX(-90deg)
+  translateZ(120px) translateY(0px);
+}
 
 /*
 .cube-face--right,

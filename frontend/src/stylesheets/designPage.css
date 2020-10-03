@@ -28,10 +28,12 @@
 
 .design-page__option-bar-left__drop-down__header {
     outline: none;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom: 2px solid #f4f4f4;
-    background-color: #edeff3;
+    border-radius: 10px;
+    font-size: 16px;
+    border: none;
+    margin-top: 10px;
+    height: 50px;
+    background-color: #ffffff;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -55,7 +57,43 @@
     line-height: 2.1;
     font-weight: 600;
     width: 100%;
-    border-bottom: 2px solid #f4f4f4;
+    border: none;
+    border-bottom: 1px solid rgb(207, 206, 206);
+}
+
+.blue {
+    background-color: rgb(92, 118, 167);
+    color: white;
+}
+
+.orange {
+    background-color: rgb(201, 164, 64);
+    color: white;
+}
+
+.yellow {
+    background-color: rgb(243, 243, 188);
+    color: black;
+}
+
+.red {
+    background-color: rgb(180, 81, 81);
+    color: white;
+}
+
+.green {
+    background-color: rgb(62, 99, 38);
+    color: white;
+}
+
+.black {
+    background-color: black;
+    color: white;
+}
+
+.white {
+    background-color: white;
+    color: black;
 }
 
 .design-page__box-rendering-container {
@@ -65,6 +103,42 @@
     align-items: center;
 }
 
+.size-button-container {
+    background-color: white;
+    display: grid;
+    grid-gap: 5px;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-top: 5px;
+}
+
+.size-button {
+    border: none;
+    background-color: white;
+    color: #8189a7;
+}
+
+.size-button:hover {
+    background-color: #2e469e;
+    color: white;
+}
+
+.big {
+    font-size: 40px;
+    height: 50px;
+}
+
+.medium {
+    font-size: 25px;
+    height: 35px;
+}
+
+.small {
+    font-size: 12px;
+    height: 22px;
+}
 .design-page__box-rendering-container__select-side {
     width: 100%;
     height: 20px;
@@ -142,7 +216,6 @@
 }
 
 .design-page__info-bar-right__info.subtotal {
-
 }
 
 .design-page__info-bar-right__info__value {

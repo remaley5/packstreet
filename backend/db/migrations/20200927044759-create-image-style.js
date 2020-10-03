@@ -10,7 +10,7 @@ module.exports = {
       },
       url: {
         type: Sequelize.TEXT,
-        allowNull: false
+        allowNull: true
       },
       cover: {
         type: Sequelize.TEXT,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { setCurrentDropdown } from '../../../store/reducers/design';
-import AddText from './addDropdowns/addText/AddText';
+import TextStyle from './addDropdowns/textStyle/TextStyle';
 import AddQuantity from './addDropdowns/AddQuantity';
 import AddImages from './addDropdowns/AddImages';
 
@@ -35,7 +35,7 @@ class LeftChoices extends Component {
                         <button type='button' name='reset' className='design-page__option-bar-left__option' onClick={this.handleReset}>reset</button>
                     </div>
                 </div>
-                <AddText setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
+                <TextStyle setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
                 <AddQuantity setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
                 <AddImages setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
             </>

@@ -1,7 +1,7 @@
 export const SET_CURRENT_SIDE = 'SET_CURRENT_SIDE';
 export const SET_CURRENT_DROPDOWN = 'SET_CURRENT_DROPDOWN';
 export const SET_STYLE = 'SET_STYLE';
-export const SAVE_DESIGN = 'SAVE_DESIGN'
+export const SAVE_DESIGN = 'SAVE_DESIGN';
 
 export const setCurrentSide = (side) => {
     return {
@@ -50,10 +50,8 @@ export const saveCurrentDesign = (userId, designState) => {
 
         const data = await response.json();
         dispatch(saveDesign(data))
-        console.log('You made a new Design!', data)
     }
 }
-
 
 const initialState = {
     currentSide: 'front', currentDropdown: 'text',

@@ -26,7 +26,7 @@ class Render extends Component {
             <>
                 <div className='design-page__box-rendering-container'>
                     <div className='design-page__box-rendering-container__select-side'>
-                        <RenderBox currentSide={this.props.currentSide} designState={this.props.designState}/>
+                        <RenderBox currentSide={this.props.currentSide} packageFaces={this.props.designState.savedPackageDesign.packageFaces}/>
                         <div className='design-page__box-rendering-container__select-side__label'>
                             Select side
                     </div>
