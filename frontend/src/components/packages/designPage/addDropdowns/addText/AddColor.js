@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {setStyle } from '../../../../store/reducers/design';
+import {setStyle } from '../../../../../store/reducers/design';
 
 const colors = ['blue', 'orange', 'yellow', 'green', 'red', 'black', 'white']
 class AddColor extends Component {
@@ -38,3 +38,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddColor)
+
+// export default AddColor;

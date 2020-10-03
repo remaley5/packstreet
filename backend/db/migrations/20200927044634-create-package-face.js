@@ -14,7 +14,7 @@ module.exports = {
       },
       color: {
         type: Sequelize.TEXT,
-        allowNull: true,
+        allowNull:true
       },
       packageDesignId: {
         type: Sequelize.INTEGER,

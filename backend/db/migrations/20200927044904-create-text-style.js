@@ -14,7 +14,7 @@ module.exports = {
       },
       fontSize: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: true
       },
       fontFamily: {
         type: Sequelize.TEXT,

@@ -1,5 +1,4 @@
 import React from 'react';
-
 const PackageBases = ({packageBases}) => {
     return (
             <div className='homepage__choose-style-section'>
@@ -8,7 +7,7 @@ const PackageBases = ({packageBases}) => {
                     {packageBases.map((packageBase) => {
                         return (
                             <div className='homepage__choose-style-section__package' key={packageBase.name}>
-                                <img src={require(`../../../public/images/${packageBase.defaultImage}`)} alt={packageBase.name} className='homepage__choose-style-section__image' />
+                                <img src={require(`../../images/${packageBase.defaultImage}`)} alt={packageBase.name} className='homepage__choose-style-section__image' />
                                 <div className='homepage__choose-style-section__package-name'>{packageBase.name}</div>
                                 <div className='homepage__choose-style-section__learn-more'>Learn more</div>
                                 <button className='section-button'>{packageBase.buttonText}</button>

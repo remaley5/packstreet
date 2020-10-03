@@ -10,7 +10,7 @@ const AddImages = (props) => {
                     Add Images
                 </div>
             </div>
-            <div class='dropdown__image-choices' />
+            <div className='dropdown__image-choices' />
         </>
     )
     } else return null

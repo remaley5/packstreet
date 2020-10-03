@@ -15,8 +15,7 @@ class ConnectedPackageBases extends React.Component {
     render() {
         return (
             <PackageBases
-                packageBases={this.props.packageBases}
-            />
+                packageBases={this.props.packageBases}/>
         )
     }
 }
