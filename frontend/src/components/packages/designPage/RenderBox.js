@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import cardboard from '../../../images/cardboard-box.jpg';
+import image from '../../../images/package-choices/image-choice-spider.png';
+
 
 const RenderBox = ({currentSide, designState}) => {
 
@@ -14,13 +15,9 @@ const RenderBox = ({currentSide, designState}) => {
     const back = faces.back;
     const front = faces.front;
 
-    console.log('RIGHHT COLOR', right.textStyle.color);
-
-
     var Right = styled.div`
     color: ${right.textStyle.color}
 `
-
     var Left = styled.div`
     color: ${left.textStyle.color}
 `
@@ -40,12 +37,15 @@ const RenderBox = ({currentSide, designState}) => {
     return (
         <div className="render-container">
             <div className={`cube show-${currentSide}`}>
-                <Front className={`cube__face cube__face--front`}>TEST</Front>
-                <Back className={`cube__face cube__face--back`}>TEST</Back>
-                <Top className={`cube__face cube__face--top`}>TEST</Top>
-                <Bottom className={`cube__face cube__face--bottom`}>TEST</Bottom>
-                <Left className={`cube__face cube__face--left`}>TEST</Left>
-                <Right className={`cube__face cube__face--right`}>TEST</Right>
+                <Front className={`cube__face cube__face--front`}>
+                    <img className='box-image' src={image}/>
+                    <div className='box-text'>{front.textStyle.text}</div>
+                </Front>
+                <Back className={`cube__face cube__face--back`}>{back.textStyle.text}</Back>
+                <Top className={`cube__face cube__face--top`}>{top.textStyle.text}</Top>
+                <Bottom className={`cube__face cube__face--bottom`}>{bottom.textStyle.text}</Bottom>
+                <Left className={`cube__face cube__face--left`}>{left.textStyle.text}</Left>
+                <Right className={`cube__face cube__face--right`}>{right.textStyle.text}</Right>
             </div>
         </div>
     )

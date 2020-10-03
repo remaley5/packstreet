@@ -17,9 +17,15 @@ body { font-family: sans-serif; }
   transform: translateZ(-100px);
   transition: transform 1s;
 }
-
+.box-text {
+  position: absolute;
+  z-index: 999;
+  margin: 0 auto;
+  text-align: center;
+}
 .box-image {
-    width: 100%;
+    max-width: 200px;
+    position: relative;
 }
 .cube.show-front  { transform: translateZ(-100px) rotateY(   20deg); }
 .cube.show-right  { transform: translateZ(-100px) rotateY( -90deg); }
