@@ -17,17 +17,17 @@ export const setCurrentDropdown = (component) => {
     }
 }
 
-export const setStyle = (component, attribute, value, PackageFace) => {
+export const setStyle = (component, attribute, value, packageFace) => {
     console.log('component', component)
     console.log('attribute', attribute)
     console.log('value', value)
-    console.log('PackageFace', PackageFace)
+    console.log('packageFace', packageFace)
     return {
         type: SET_STYLE,
         component,
         attribute,
         value,
-        PackageFace
+        packageFace
     }
 }
 
@@ -57,33 +57,59 @@ export const saveCurrentDesign = (userId, designState) => {
 
 const initialState = {
     currentSide: 'front', currentDropdown: 'text',
-    SavedPackageDesign: {
-        PackageFaces: {}
+    savedPackageDesign: {
+        packageFaces: {
+            front: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                }
+            },
+            back: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                }
+            },
+            right: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                }
+            },
+            left: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                }
+            },
+            top: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                }
+            },
+            bottom: {
+                textStyle: {
+                    color: 'black',
+                    fontSize: 14,
+                },
+                imageStyle: {
+                },
+            }
+        }
     }
 }
-//         front: {
-//             ImageStyle: {
-//                 color: 'orange',
-//                 url: '/package-choices/image-choice-spider.png',
-//             },
-//             TextStyle: {
-//                 text: 'Sophie is queen',
-//                 fontSize: 14,
-//                 fontFamily: 'Arial'
-//             }
-//         },
-//         right: {
-//             ImageStyle: {
-//                 color: 'yellow',
-//                 url: '/package-choices/image-choice-trophy.png',
-//             },
-//             TextStyle: {
-//                 text: 'Sophie wins',
-//                 fontSize: 14,
-//                 fontFamily: 'Arial'
-//             }
-//         }
-//     }
 
 export default function reducer(state = initialState, action) {
     Object.freeze(state);
@@ -93,16 +119,16 @@ export default function reducer(state = initialState, action) {
         case SET_CURRENT_DROPDOWN:
             return { ...state, currentDropdown: action.component }
         case SET_STYLE:
-            if(state.SavedPackageDesign.PackageFaces[action.PackageFace]) {
-                var face = {...state.SavedPackageDesign.PackageFaces[action.PackageFace]}
+            if (state.savedPackageDesign.packageFaces[action.packageFace]) {
+                var face = { ...state.savedPackageDesign.packageFaces[action.packageFace] }
             } else face = {};
             return {
                 ...state,
-                SavedPackageDesign: {
-                    ...state.SavedPackageDesign,
-                    PackageFaces: {
-                        ...state.SavedPackageDesign.PackageFaces,
-                        [action.PackageFace]: {
+                savedPackageDesign: {
+                    ...state.savedPackageDesign,
+                    packageFaces: {
+                        ...state.savedPackageDesign.packageFaces,
+                        [action.packageFace]: {
                             ...face,
                             [action.component]: {
                                 ...face[action.component],

@@ -9,7 +9,7 @@ class AddColor extends Component {
     }
 
     handleClick = e => {
-        this.props.setStyle('TextStyle', 'color', e.target.value, this.props.currentSide)
+        this.props.setStyle('textStyle', 'color', e.target.value, this.props.currentSide)
     }
 
     render() {

@@ -19,7 +19,7 @@ router.get('/bases/:id', asyncHandler(async function(req, res) {
 router.post('/save', asyncHandler(async function(req, res) {
     const { userId, designState } = req.body;
 
-    let packageFaces = designState.PackageFaces
+    let packageFaces = designState.packageFaces
     const newSavedPackageDesign = await SavedPackageDesign.create({
         name: designState.name,
         userId: userId,
@@ -42,11 +42,11 @@ router.post('/save', asyncHandler(async function(req, res) {
             if(thePackageFace.ImageStyle.cover) attributes.cover = thePackageFace.ImageStyle.cover;
             imageStyles.push(await ImageStyle.create(attributes))
         }
-        if(thePackageFace.TextStyle) {
-            attributes = {text:thePackageFace.TextStyle.text , packageFaceId: createdPackage.id}
-            if(thePackageFace.TextStyle.fontSize) attributes.fontSize = thePackageFace.TextStyle.fontSize;
-            if(thePackageFace.TextStyle.fontFamily) attributes.fontFamily = thePackageFace.TextStyle.fontFamily;
-            if(thePackageFace.TextStyle.color) attributes.color = thePackageFace.TextStyle.color;
+        if(thePackageFace.textStyle) {
+            attributes = {text:thePackageFace.textStyle.text , packageFaceId: createdPackage.id}
+            if(thePackageFace.textStyle.fontSize) attributes.fontSize = thePackageFace.textStyle.fontSize;
+            if(thePackageFace.textStyle.fontFamily) attributes.fontFamily = thePackageFace.textStyle.fontFamily;
+            if(thePackageFace.textStyle.color) attributes.color = thePackageFace.textStyle.color;
             textStyles.push(await TextStyle.create(attributes));
         }
     }

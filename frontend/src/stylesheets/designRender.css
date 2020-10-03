@@ -36,9 +36,6 @@ body { font-family: sans-serif; }
   height: 200px;
   border: none;
   line-height: auto;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
   text-align: center;
   display: flex;
   align-items: center;

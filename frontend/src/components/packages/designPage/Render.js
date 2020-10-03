@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setCurrentSide } from '../../../store/reducers/design';
+import RenderBox from './RenderBox';
+
 
 const sides = ['right', 'left', 'front', 'back', 'top', 'bottom']
 
@@ -13,6 +15,8 @@ class Render extends Component {
         }
     }
 
+
+
     changeSide = (e) => {
         this.props.setCurrentSide(e.target.value);
     }
@@ -22,15 +26,7 @@ class Render extends Component {
             <>
                 <div className='design-page__box-rendering-container'>
                     <div className='design-page__box-rendering-container__select-side'>
-                        <div className="render-container">
-                            <div className={`cube show-${this.props.currentSide}`}>
-                                {sides.map(side => {
-                                    return (
-                                        <div className={`cube__face cube__face--${side}`}></div>
-                                    )
-                                })}
-                            </div>
-                        </div>
+                        <RenderBox currentSide={this.props.currentSide} designState={this.props.designState}/>
                         <div className='design-page__box-rendering-container__select-side__label'>
                             Select side
                     </div>
@@ -50,7 +46,10 @@ class Render extends Component {
 }
 
 const mapStateToProps = (state) => {
-    return { currentSide: state.design.currentSide }
+    return {
+        currentSide: state.design.currentSide,
+        designState: state.design
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {

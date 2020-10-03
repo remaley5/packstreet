@@ -51,7 +51,7 @@ class InfoBarRight extends Component {
 
 const mapStateToProps = state => {
     return {
-        designState: state.design.SavedPackageDesign,
+        designState: state.design.savedPackageDesign,
         userId: state.auth.id
     }
 }
