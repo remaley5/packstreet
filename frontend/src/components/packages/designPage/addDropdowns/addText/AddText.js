@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AddColor from './AddColor';
+import AddInput from './AddInput';
 
 const options = ['addText', 'addFont', 'addColor']
 
@@ -19,8 +20,8 @@ class AddText extends Component {
         if ((this.state[e.target.value]) !== null) { console.log(`setting ${e.target.value} to null`);
          this.setState({ [e.target.value]: null })}
         else if (e.target.value === 'addFont') this.setState({ addFont: <>AddFont </> })
-        else if (e.target.value === 'addText') this.setState({ addText: <>add text</>})
-        else if (e.target.value === 'addColor') this.setState({ addColor: <AddColor setStyle={this.props.setStyle} currentSide={this.props.currentSide}/> })
+        else if (e.target.value === 'addText') this.setState({ addText: <AddInput />})
+        else if (e.target.value === 'addColor') this.setState({ addColor: <AddColor /> })
 
     }
 
