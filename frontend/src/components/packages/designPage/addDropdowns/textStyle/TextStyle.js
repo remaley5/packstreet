@@ -14,7 +14,6 @@ class TextStyle extends Component {
             addFont: null,
             addText: null,
             addColor: null,
-            current: null
         }
     }
 

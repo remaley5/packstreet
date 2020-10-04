@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { saveCurrentDesign } from '../../../store/reducers/design';
 
+const categories = ['Size', 'Material', 'Quantity', 'Unit price', 'Subtotal']
+const values = ['10" x 10" x 10"', '250', '$2.66', '$655.00']
+
 class InfoBarRight extends Component {
     constructor(props) {
         super(props)
@@ -14,35 +17,23 @@ class InfoBarRight extends Component {
         return (
             <>
                 <div className='design-page__info-bar-right'>
-                    <div className='design-page__info-bar-right__box-name'>{}</div>
-                    <div className='design-page__info-bar-right__description'>{}</div>
-                    <div className='design-page__info-bar-right__info'>
-                        <table>
+                    <div className='design-page__info-bar-right__box-name'>Shipper</div>
+                    <div className='design-page__info-bar-right__description'>Perfect for beauty packaging, supplements, and chocolate.</div>
+                        <table className='design-page__info-bar-right__info'>
                             <tbody>
-                                <tr>
-                                    <th className='design-page__info-bar-right__info title'>Size</th>
-                                    <td className='design-page__info-bar-right__info__value'>10" x 8" x 4"</td>
-                                </tr>
-                                <tr>
-                                    <th className='design-page__info-bar-right__info title'>Material</th>
-                                    <td className='design-page__info-bar-right__info__value'>White</td>
-                                </tr>
-                                <tr>
-                                    <th className='design-page__info-bar-right__info title'>Quantity</th>
-                                    <td className='design-page__info-bar-right__info__value'>250</td>
-                                </tr>
-                                <tr>
-                                    <th className='design-page__info-bar-right__info title'>Unit price</th>
-                                    <td className='design-page__info-bar-right__info__value'>$2.66</td>
-                                </tr>
-                                <tr>
-                                    <th className='design-page__info-bar-right__info title subtotal'>Subtotal</th>
-                                    <td className='design-page__info-bar-right__info__value'>$655.00</td>
-                                </tr>
+                            {
+                                    categories.map((category, i) => {
+                                        return (
+                                            <tr>
+                                                <th className='info-bar-right__category'>{category}</th>
+                                                <td className='info-bar-right__value'>{values[i]}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
                             </tbody>
                         </table>
                         <button className='design-page__info-bar-right__button' onClick={this.handleClick}>Save</button>
-                    </div>
                 </div>
             </>
         )

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {setStyle } from '../../../../../store/reducers/design';
+import { setStyle } from '../../../../../store/reducers/design';
 
-const fonts = ['Times New Roman', 'Veranda', 'Courier New', 'Lucida Console', 'Comic Sans MS', 'Arial Black']
+const fonts = ['Times New Roman', 'Luminari', 'Courier New', 'Trattatello', 'Comic Sans MS', 'Arial Black']
 
 class AddFont extends Component {
     constructor(props) {
@@ -14,23 +14,25 @@ class AddFont extends Component {
         this.props.setStyle('textStyle', 'font', font, this.props.currentSide)
     }
 
-    // handleSizeClick = e => {
-    //     this.props.setStyle('textStyle', 'fontSize', e.target.value, this.props.currentSide)
-    // }
+    handleSizeClick = e => {
+        this.props.setStyle('textStyle', 'fontSize', e.target.value, this.props.currentSide)
+    }
 
     render() {
         return (
             <div className={`design-page__option-bar-left__text__dropdown `}>
-                 <div className='design-page__option-bar-left__drop-down__option size-button-container'>
-                     {/* <button value='40' className='size-button big' onClick={this.handleSizeClick}>Big</button>
-                     <button value='25' className='size-button medium' onClick={this.handleSizeClick}>Medium</button>
-                     <button value='12' className='size-button small' onClick={this.handleSizeClick}>Small</button></div> */}
+                <div className='design-page__option-bar-left__drop-down__option size-button-container'>
+                    <button value='40' className='size-button big' onClick={this.handleSizeClick}>Big</button>
+                    <button value='25' className='size-button medium' onClick={this.handleSizeClick}>Medium</button>
+                    <button value='12' className='size-button small' onClick={this.handleSizeClick}>Small</button>
+                </div>
+                <div>
                     {fonts.map(font => {
                         return (
-                            <button value={font} className={`design-page__option-bar-left__drop-down__option`} style={{fontFamily: `${font}`}} onClick={this.handleFontClick}>{font}</button>
+                            <button value={font} className={`design-page__option-bar-left__drop-down__option`} style={{ fontFamily: `${font}` }} onClick={this.handleFontClick}>{font}</button>
                         )
                     })}
-                    </div>
+                </div>
             </div>
         )
     }
@@ -47,5 +49,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddFont)
-
-// export default AddFont;

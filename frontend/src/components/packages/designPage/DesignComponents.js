@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Render from './Render';
 import LeftChoices from './LeftChoices'
 import InfoBarRight from './InfoBarRight';
 
 
-const DesignComponents = ({ packageBase, currentDropdown, setCurrentDropdown, setStyle }) => {
+const DesignComponents = ({ currentDropdown, setCurrentDropdown, setStyle }) => {
 
     return (
         <>

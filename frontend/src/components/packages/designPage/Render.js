@@ -25,19 +25,15 @@ class Render extends Component {
         return (
             <>
                 <div className='design-page__box-rendering-container'>
-                    <div className='design-page__box-rendering-container__select-side'>
-                        <RenderBox currentSide={this.props.currentSide} packageFaces={this.props.designState.savedPackageDesign.packageFaces}/>
-                        <div className='design-page__box-rendering-container__select-side__label'>
-                            Select side
+                    <div className="button-group" >
+                        {sides.map(side => {
+                            return (
+                                <button type="button" name="rotate-cube-side" class='box-render__button' value={side} onClick={this.changeSide} >{side}</button>
+                            )
+                        })}
                     </div>
-
-                        <div className="button-group" >
-                            {sides.map(side => {
-                                return (
-                                    <button type="button" name="rotate-cube-side" value={side} onClick={this.changeSide} >{side}</button>
-                                )
-                            })}
-                        </div>
+                    <div className='design-page__box-rendering-container__box'>
+                        <RenderBox currentSide={this.props.currentSide} packageFaces={this.props.designState.savedPackageDesign.packageFaces} />
                     </div>
                 </div>
             </>

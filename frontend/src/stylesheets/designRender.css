@@ -3,10 +3,13 @@
 body { font-family: sans-serif; }
 
 .render-container {
+  margin: auto;
   width: 200px;
   height: 200px;
-  margin: 80px;
   perspective: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .cube {
@@ -24,7 +27,7 @@ body { font-family: sans-serif; }
   text-align: center;
 }
 .box-image {
-    max-width: 200px;
+    height: 100%;
     position: relative;
 }
 .cube.show-front  { transform: translateZ(-100px) rotateY(   20deg); }
@@ -43,6 +46,7 @@ body { font-family: sans-serif; }
 
 .cube__face {
   background-image: url('../images/cardboard-box.jpg');
+  overflow: hidden;
   background-size: contain;
   position: absolute;
   width: 200px;
@@ -55,23 +59,6 @@ body { font-family: sans-serif; }
   justify-content: center;
   overflow: wrap;
 }
-
-/* .cube__face--front  { background: rgb(235, 135, 135); }
-.cube__face--right  { background: rgb(223, 223, 171); }
-.cube__face--back   { background: rgb(131, 165, 131); }
-.cube__face--left   { background: rgb(153, 211, 211); }
-.cube__face--top    { background: rgb(149, 149, 192); }
-.cube__face--bottom { background: rgb(223, 195, 223); } */
-
-
-/* CUBE:
-
-.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
-.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
-.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
-.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
-.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
-.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); } */
 
 .shadow-side {
   box-shadow: inset 0px 0px 20px 100px rgba(0, 0, 0, 0.171);
@@ -119,11 +106,38 @@ body { font-family: sans-serif; }
   translateZ(120px) translateY(0px);
 }
 
-/*
-.cube-face--right,
-.cube-face--left,
-.cube-face--back,
-.cube-face--front {
-    height: 300px;
-}  */
+.box-render__button {
+  color: #516197;
+  border: none;
+  background-color: white;
+  height: 30px;
+  margin-right: 5px;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: lowercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-group {
+  background-color: white;
+  padding: 10px;
+  border-radius:10px;
+}
+.box-render__button:hover {
+  background-color: #edeff3;
+  border-radius: 5px;
+}
+
+.box-rendering__button-group__header{
+  background-color: white;
+  border-radius: 10px 10px 0 0;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #8189a7;
+  align-self: flex-start;
+
+}
+
+
 label { margin-right: 10px; }

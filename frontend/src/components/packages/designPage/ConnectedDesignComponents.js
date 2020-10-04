@@ -2,8 +2,6 @@ import React from 'react';
 import DesignComponents from './DesignComponents';
 import { connect } from 'react-redux';
 import { getPackageBase } from '../../../store/reducers/packages';
-import Render from './Render';
-import LeftChoices from './LeftChoices'
 import { setCurrentDropdown } from '../../../store/reducers/design';
 import {setStyle } from '../../../store/reducers/design';
 

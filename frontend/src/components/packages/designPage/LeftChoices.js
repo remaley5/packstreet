@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import { setCurrentDropdown } from '../../../store/reducers/design';
 import TextStyle from './addDropdowns/textStyle/TextStyle';
 import AddQuantity from './addDropdowns/AddQuantity';
-import AddImages from './addDropdowns/AddImages';
+import ImageStyle from './addDropdowns/ImageStyle';
 
 const options = ['text', 'images', 'quantity'];
 
@@ -37,7 +37,7 @@ class LeftChoices extends Component {
                 </div>
                 <TextStyle setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
                 <AddQuantity setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
-                <AddImages setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
+                <ImageStyle setStyle={this.props.setStyle} currentDropdown={this.props.currentDropdown}/>
             </>
         )
     }

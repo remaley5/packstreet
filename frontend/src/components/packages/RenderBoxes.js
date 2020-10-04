@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import image from '../../images/package-choices/image-choice-spider.png';
 
 
-const RenderBoxes = ({currentSide, design}) => {
+const RenderBoxes = ({ currentSide, design }) => {
 
     const faces = design.PackageFaces;
     // console.log('dsign', design);
@@ -13,6 +13,7 @@ const RenderBoxes = ({currentSide, design}) => {
     // console.log(faces[1]);
     // debugger;
     const front = faces[0];
+    console.log('FRONT', front)
     const back = faces[1];
     const right = faces[2];
     const left = faces[3];
@@ -43,15 +44,30 @@ const RenderBoxes = ({currentSide, design}) => {
     return (
         <div className="show-container">
             <div className='cube show-show'>
-                <Front className='cube__face cube__face--front shadow-side'>
-                    <img className='box-image' src=''/>
+                <Front className='cube__face cube__face--front'>
+                    <img className='box-image' src={front.ImageStyle.url} />
                     <div className='box-text'>{front.TextStyle.text}</div>
                 </Front>
-                <Back className='cube__face cube__face--back'>{back.TextStyle.text}</Back>
-                <Top className='cube__face cube__face--top light-side'>{top.TextStyle.text}</Top>
-                <Bottom className='cube__face cube__face--bottom'>{bottom.TextStyle.text}</Bottom>
-                <Left className='cube__face cube__face--left'>{left.TextStyle.text}</Left>
-                <Right className='cube__face cube__face--right'>{right.TextStyle.text}</Right>
+                <Back className='cube__face cube__face--back'>
+                <img className='box-image' src={back.ImageStyle.url} />
+                    <div className='box-text'>{back.TextStyle.text}</div>
+                </Back>
+                <Top className='cube__face cube__face--top'>
+                <img className='box-image' src={top.ImageStyle.url} />
+                    <div className='box-text'>{top.TextStyle.text}</div>
+                </Top>
+                <Bottom className='cube__face cube__face--bottom'>
+                <img className='box-image' src={bottom.ImageStyle.url} />
+                    <div className='box-text'>{bottom.TextStyle.text}</div>
+                </Bottom>
+                <Left className='cube__face cube__face--left'>
+                <img className='box-image' src={left.ImageStyle.url} />
+                    <div className='box-text'>{left.TextStyle.text}</div>
+                </Left>
+                <Right className='cube__face cube__face--right'>
+                <img className='box-image' src={right.ImageStyle.url} />
+                    <div className='box-text'>{right.TextStyle.text}</div>
+                </Right>
                 <div className='cube-face cube-shadow'></div>
             </div>
         </div>

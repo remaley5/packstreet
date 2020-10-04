@@ -23,9 +23,9 @@ class AddInput extends Component {
 
     render() {
         return (
-            <form>
-            <input type='text' placeholder='what do you want to say?' onChange={this.handleChange}/>
-            <button type='button' onClick={this.handleClick}>Submit</button>
+            <form className='design-page__option-bar-left__drop-down__option input-container'>
+            <input className='dropdown-input' type='text' onChange={this.handleChange}/>
+            <div className='dropdown-input__button' onClick={this.handleClick}>ADD</div>
             </form>
         )
     }

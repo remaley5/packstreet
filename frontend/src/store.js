@@ -9,4 +9,8 @@ const configureStore = () => {
   );
 };
 
+store.subscribe(() => {
+  saveState(store.getState());
+});
+
 export default configureStore;
