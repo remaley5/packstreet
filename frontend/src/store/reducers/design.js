@@ -103,6 +103,7 @@ const initialState = {
                     fontSize: 14,
                 },
                 imageStyle: {
+                    url: ''
                 },
             }
         }

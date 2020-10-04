@@ -26,20 +26,32 @@ const RenderBoxes = ({ currentSide, design }) => {
     font-family: ${right.TextStyle.fontFamily};
 `
     var Left = styled.div`
-    color: ${left.TextStyle.color}
+    color: ${left.TextStyle.color};
+    font-size: ${left.TextStyle.fontSize}px;
+    font-family: ${left.TextStyle.fontFamily};
 `
     var Front = styled.div`
     color: ${front.TextStyle.color}
+    font-size: ${front.TextStyle.fontSize}px;
+    font-family: ${front.TextStyle.fontFamily};
 `
     var Back = styled.div`
     color: ${back.TextStyle.color}
+    font-size: ${front.TextStyle.fontSize}px;
+    font-family: ${front.TextStyle.fontFamily};
 `
     var Top = styled.div`
     color: ${top.TextStyle.color}
+    font-size: ${front.TextStyle.fontSize}px;
+    font-family: ${front.TextStyle.fontFamily};
 `
     var Bottom = styled.div`
     color: ${bottom.TextStyle.color}
+    font-size: ${bottom.TextStyle.fontSize}px;
+    font-family: ${bottom.TextStyle.fontFamily};
 `
+
+console.log('FRONT', left)
 
     return (
         <div className="show-container">
