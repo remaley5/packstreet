@@ -1,0 +1,19 @@
+{
+  "name": "packstreet",
+  "version": "1.0.0",
+  "description": "packlane clone",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/remaley5/packstreet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/remaley5/packstreet/issues"
+  },
+  "homepage": "https://github.com/remaley5/packstreet#readme"
+}
