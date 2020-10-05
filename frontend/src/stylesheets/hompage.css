@@ -6,20 +6,6 @@ body {
       overflow-x: hidden;
   }
 
-  .landing-page {
-    width: 500px;
-    margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 200px;
-  }
-
-  .signup-form {
-    margin-top: 30px;
-    width: 100%;
-  }
-
   /* HOMEPAGE */
 
   /* Header Section:  */

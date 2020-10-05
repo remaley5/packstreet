@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/reducers/authentication';
-import { Button, TextField } from '@material-ui/core';
 
 class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "sophie@email.com",
-      password: "sophie",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateEmail = this.updateValue("email");
@@ -29,22 +26,23 @@ class LoginForm extends Component {
     if (this.props.currentUserId) {
       return <Redirect to="/" />
     }
+
     return (
       <main className="login-form">
-        <form onSubmit={this.handleSubmit}>
-          <TextField
+        <form className='landing-page__form' onSubmit={this.handleSubmit}>
+          <input className='form-input'
             type="text"
             placeholder="enter your email"
             value={this.state.email}
             onChange={this.updateEmail}
           />
-          <TextField
+          <input className='form-input'
             type="password"
             placeholder="enter your password"
             value={this.state.password}
             onChange={this.updatePassword}
           />
-          <Button type="submit">Login</Button>
+          <button className='form-button' type="submit">Login</button>
         </form>
       </main>
     );

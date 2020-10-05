@@ -1,9 +1,8 @@
-import { Container } from "@material-ui/core";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { setCurrentSide } from "../../store/reducers/design";
 import { getSavedDesigns } from '../../store/reducers/packages';
 import RenderBoxes from './RenderBoxes'
+import Navigation from '../Navigation'
 
 class SavedPackages extends Component {
   constructor(props) {
@@ -14,28 +13,31 @@ class SavedPackages extends Component {
 
   componentDidMount = () => {
     this.props.getSavedDesigns(this.props.id);
-
   }
 
   render() {
     return (
-      <div className='saved-designs-page'>
-        <div className='saved-designs-page__header'>
-          <h1>Saved Designs</h1>
+      <>
+        <Navigation />
+        <div className='saved-designs-page'>
+          <div className='saved-designs-page__header'>
+            <h1>My Designs</h1>
+          </div>
+          <div className='saved-designs-page__designs-container'>
+            {this.props.savedDesigns.map((design, i) => {
+              return (
+                <div key={`design${i}`} className='saved-designs-page__designs-container__design'>
+                  <RenderBoxes key={`renderbox${i}`} design={design} />
+                </div>
+              )
+            })}
+          </div>
         </div>
-        <div className='saved-designs-page__designs-container'>
-          {this.props.savedDesigns.map(design => {
-            return (
-              <div className='saved-designs-page__designs-container__design'>
-                <RenderBoxes design={design} />
-              </div>
-            )
-          })}
-        </div>
-      </div>
+      </>
     )
   }
 }
+
 
 const mapStateToProps = (state) => {
   return {

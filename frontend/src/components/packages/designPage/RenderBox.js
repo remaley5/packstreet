@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 
+var Face = styled.div(props => `
+color: ${props.textStyle.color};
+font-family: ${props.textStyle.font};
+font-size: ${props.textStyle.fontSize}px;
+`)
 
 const RenderBox = ({currentSide, packageFaces}) => {
     const faces = ['right', 'left', 'top', 'bottom', 'back', 'front']
-
-    var Face = styled.div(props => `
-    color: ${props.textStyle.color};
-    font-family: ${props.textStyle.font};
-    font-size: ${props.textStyle.fontSize}px;
-`)
 
     return (
         <div className="render-container">
@@ -17,9 +16,9 @@ const RenderBox = ({currentSide, packageFaces}) => {
                 {faces.map((face, i) => {
                     const faceStyles = packageFaces[face];
                     return (
-                        <Face textStyle={faceStyles.textStyle} className={`cube__face cube__face--${face}`}>
-                            <img className='box-image' src={faceStyles.imageStyle.url} />
-                            <div className='box-text'>{faceStyles.textStyle.text}</div>
+                        <Face textStyle={faceStyles.textStyle} key={i} className={`cube__face cube__face--${face}`}>
+                            <img className='box-image' key={`imageStyle${faceStyles.imageStyle.id}`} src={faceStyles.imageStyle.url} />
+                            <div className='box-text' key={`textStyle${faceStyles.textStyle.id}`}>{faceStyles.textStyle.text}</div>
                         </Face>
                     )
                 })}

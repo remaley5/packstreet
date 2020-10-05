@@ -9,6 +9,7 @@
 @import url('./designPage.css');
 @import url('./designRender.css');
 @import url('./savedDesigns.css');
+@import url('./landingPage.css');
 
 .section-header {
     margin-top: 0;
@@ -26,15 +27,12 @@
     font-size: 20px;
   }
 
-  .star-header {
-
-}
-
 .section-button {
+  color: #2e469e;
     background-color: white;
-    color: #2e469e;
+    text-decoration: none;
     height: 63px;
-    padding: 15px 30px;
+    padding: 20px 30px;
     border: none;
     border-radius: 30px;
     text-transform: uppercase;
@@ -42,8 +40,8 @@
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     margin-bottom: 20px;
-
   }
+
   .section-button:hover {
     background-color: #2e469e;
     color: white;

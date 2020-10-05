@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import ConnectedDesignComponents from './packages/designPage/ConnectedDesignComponents';
+import Navigation from './Navigation'
 
 class DesignPage extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class DesignPage extends Component {
     render() {
         return (
             <>
+                <Navigation />
                 <ConnectedDesignComponents />
             </>
         );

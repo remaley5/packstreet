@@ -1,7 +1,7 @@
 import React from 'react';
 import PackageBases from './PackageBases';
 import { connect } from 'react-redux';
-import { getPackageBases } from '../../store/reducers/packages';
+import { getPackageBases, setCurrentBase } from '../../store/reducers/packages';
 
 class ConnectedPackageBases extends React.Component {
     constructor(props) {
@@ -15,18 +15,21 @@ class ConnectedPackageBases extends React.Component {
     render() {
         return (
             <PackageBases
-                packageBases={this.props.packageBases}/>
+                packageBases={this.props.packageBases} setCurrentBase={this.props.setCurrentBase}/>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return { packageBases: state.packages.packageBases }
+    return {
+        packageBases: state.packages.packageBases,
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        getPackageBases: () => dispatch(getPackageBases())
+        getPackageBases: () => dispatch(getPackageBases()),
+        setCurrentBase: (id) => dispatch(setCurrentBase(id))
     }
 };
 

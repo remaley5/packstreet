@@ -45,7 +45,7 @@ body { font-family: sans-serif; }
 }
 
 .cube__face {
-  background-image: url('../images/cardboard-box.jpg');
+  background-image: url("https://lh3.googleusercontent.com/o-PEiKfMtK68NARnov7vdnRA1USCewNo3OOQKyyHd-JFYHRmkNKQv8gnwExchxz2vm6qNR42KPeXMGvhO2JSdrSZMy63VICv3or3yBt9Y8l0EGKcxymoCi0ZxnegteIEARqD-jCNUQ");
   overflow: hidden;
   background-size: contain;
   position: absolute;
@@ -58,6 +58,7 @@ body { font-family: sans-serif; }
   align-items: center;
   justify-content: center;
   overflow: wrap;
+  box-shadow: inset 0 0 40px 20px #dad9d959;
 }
 
 .shadow-side {
@@ -68,31 +69,31 @@ body { font-family: sans-serif; }
   box-shadow: inset 0px 0px 20px 100px rgba(255, 255, 255, 0.171);
 }
 .cube__face--front  {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateY(  0deg) translateZ(100px);
 }
 
 .cube__face--right  {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateY( 90deg) translateZ(100px);
 }
 
 .cube__face--left   {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateY(-90deg) translateZ(100px);
 }
 .cube__face--back   {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateY(180deg) translateZ(100px);
 }
 
 .cube__face--top    {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateX( 90deg) translateZ(100px);
 }
 
 .cube__face--bottom {
-  border: 1px solid rgb(133, 95, 59);
+  /* border: 1px solid rgb(133, 95, 59); */
   transform: rotateX(-90deg)
   translateZ(100px);
 }

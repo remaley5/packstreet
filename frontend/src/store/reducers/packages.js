@@ -1,6 +1,7 @@
 export const RECEIVE_PACKAGE_BASES = 'RECEIVE_PACKAGE_BASES';
 export const RECEIVE_PACKAGE_BASE = 'RECEIVE_PACKAGE_BASE'
-export const SAVED_DESIGNS = 'SAVED_DESIGNS'
+export const SAVED_DESIGNS = 'SAVED_DESIGNS';
+export const SET_CURRENT_BASE = 'SET_CURRENT_BASE'
 
 const receivePackageBases = (packageBases) => {
     return {
@@ -8,6 +9,13 @@ const receivePackageBases = (packageBases) => {
         packageBases
     };
 };
+
+export const setCurrentBase = (currentBaseId) => {
+    return {
+        type: SET_CURRENT_BASE,
+        currentBaseId
+    }
+}
 
 const receivePackageBase = (packageBase) => {
     return {
@@ -33,9 +41,12 @@ export const getPackageBases = () => {
 };
 
 export const getPackageBase = (id) => {
+    // debugger
     return async (dispatch) => {
         const res = await fetch(`/api/package/bases/${id}`)
         const data = await res.json();
+        console.log('data', data)
+        // debugger
         dispatch(receivePackageBase(data));
         return data;
     };
@@ -51,13 +62,15 @@ export const getSavedDesigns = (id) => {
     }
 }
 
-const initialState = { packageBases: [], packageBase: {}, savedDesigns: [] }
+const initialState = { packageBases: [], packageBase: {}, savedDesigns: [], currentBaseId: 1 }
 
 export default function reducer(state = initialState, action) {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_PACKAGE_BASES:
             return { ...state, packageBases: action.packageBases }
+        case SET_CURRENT_BASE:
+            return {...state, currentBaseId: action.currentBaseId}
         case RECEIVE_PACKAGE_BASE:
             return { ...state, packageBase: action.packageBase }
         case SAVED_DESIGNS:

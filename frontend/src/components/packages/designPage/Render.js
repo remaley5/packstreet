@@ -28,7 +28,7 @@ class Render extends Component {
                     <div className="button-group" >
                         {sides.map(side => {
                             return (
-                                <button type="button" name="rotate-cube-side" class='box-render__button' value={side} onClick={this.changeSide} >{side}</button>
+                                <button type="button" key={`button${side}`} name="rotate-cube-side" className='box-render__button' value={side} onClick={this.changeSide} >{side}</button>
                             )
                         })}
                     </div>

@@ -22,9 +22,9 @@ class AddColor extends Component {
     render() {
         return (
             <div className={`design-page__option-bar-left__text__dropdown `}>
-                    {colors.map(color => {
+                    {colors.map((color, i) => {
                         return (
-                            <button value={color} className={`design-page__option-bar-left__drop-down__option ${color}`} onClick={this.handleClick}>{color}</button>
+                            <button value={color} key={`color${i}`} className={`design-page__option-bar-left__drop-down__option ${color}`} onClick={this.handleClick}>{color}</button>
                         )
                     })}
             </div>

@@ -27,9 +27,9 @@ class AddFont extends Component {
                     <button value='12' className='size-button small' onClick={this.handleSizeClick}>Small</button>
                 </div>
                 <div>
-                    {fonts.map(font => {
+                    {fonts.map((font, i)=> {
                         return (
-                            <button value={font} className={`design-page__option-bar-left__drop-down__option`} style={{ fontFamily: `${font}` }} onClick={this.handleFontClick}>{font}</button>
+                            <button value={font} key={`font${i}`}  className={`design-page__option-bar-left__drop-down__option`} style={{ fontFamily: `${font}` }} onClick={this.handleFontClick}>{font}</button>
                         )
                     })}
                 </div>

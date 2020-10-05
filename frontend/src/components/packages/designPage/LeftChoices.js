@@ -27,9 +27,9 @@ class LeftChoices extends Component {
             <>
                 <div className='design-page__option-bar-left'>
                     <div className="options" >
-                        {options.map(option => {
+                        {options.map((option, i) => {
                             return (
-                                <button type="button" name={option} className='design-page__option-bar-left__option' value={option} onClick={this.changeDropdown} >{option}</button>
+                                <button type="button" key={`option${i}`} name={option} className='design-page__option-bar-left__option' value={option} onClick={this.changeDropdown} >{option}</button>
                             )
                         })}
                         <button type='button' name='reset' className='design-page__option-bar-left__option' onClick={this.handleReset}>reset</button>

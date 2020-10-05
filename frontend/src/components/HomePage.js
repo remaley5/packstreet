@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Navigation from './Navigation'
 import inspoMailer1 from '../images/inspiration-images/inspo-mailer-box-1.jpg'
 import inspoFolder1 from '../images/inspiration-images/inspo-folding-carton-1.jpg';
 import inspoShipper1 from '../images/inspiration-images/inspo-shipping-box-1.jpg'
@@ -35,6 +36,7 @@ class HomePage extends Component {
   render() {
     return (
       <>
+        <Navigation />
         <div className='homepage'>
           <div className='homepage__header-section'>
             <h1 className='section-header'>Create custom packaging</h1>
@@ -53,7 +55,7 @@ class HomePage extends Component {
             <p className='section-description'>We’re here to help. Whether you’re designing custom gift boxes with your logo or need help with your box design, there’s lots of inspiration to be found for your custom product packaging.</p>
             <div className='homepage__get-inspired__image-container'>
               {inspoImages.map((image, i) =>(
-                <div className={`inspo-${i}`}><img src={image} className='inspo-image'/></div>
+                <div className={`inspo-${i}`} key={`inpo${i}`}><img src={image} className='inspo-image'/></div>
               ))}
             </div>
           </div>

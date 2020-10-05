@@ -35,8 +35,8 @@ class TextStyle extends Component {
                     <div className='design-page__option-bar-left__drop-down text'>
                         {options.map((option, i) => {
                             return (<>
-                                <button className='design-page__option-bar-left__drop-down__header' value={option} onClick={this.handleDropdown}>{titles[i]}</button>
-                                {this.state[option]}
+                                <button key={`option${i}`} className='design-page__option-bar-left__drop-down__header' value={option} onClick={this.handleDropdown}>{titles[i]}</button>
+                                <div key={`choices${i}`}>{this.state[option]}</div>
                             </>)
                         })}
                     </div>

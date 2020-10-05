@@ -1,19 +1,18 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import * as authActions from '../../store/reducers/authentication'
-import { Button, TextField } from '@material-ui/core';
 
-class SignupFormControl extends Component {
-        constructor(props) {
-          super(props);
-          this.state = {
+class SignupForm extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             firstName: '',
             lastName: '',
             email: '',
             password: '',
             confirmPassword: ''
-          };
+        };
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.updateFirstName = this.updateValue('firstName');
@@ -25,7 +24,6 @@ class SignupFormControl extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-
         await this.props.signup(
             this.state.firstName,
             this.state.lastName,
@@ -33,60 +31,65 @@ class SignupFormControl extends Component {
             this.state.password,
             this.state.confirmPassword
         );
-        // this.props.login(this.state.email, this.state.password)
+
     };
 
-    updateValue (name) {
+    updateValue(name) {
         return (e) => {
-          this.setState({ [name]: e.target.value });
+            this.setState({ [name]: e.target.value });
         }
-      }
+    }
 
     render() {
-        if(this.props.loggedIn) {
+        if (this.props.loggedIn) {
             return <Redirect to="/" />
         };
-        return(
+        return (
             <main className="signup-form">
-                <form onSubmit={this.handleSubmit}>
-                    <TextField
+                <form className='landing-page__form' onSubmit={this.handleSubmit}>
+                    <input
+                        className='form-input'
                         type='text'
                         placeholder='first name'
                         value={this.state.firstName}
                         onChange={this.updateFirstName}
                     />
-                    <TextField
+                    <input
+                        className='form-input'
                         type='text'
                         placeholder='last name'
                         value={this.state.lastName}
                         onChange={this.updateLastName}
                     />
-                    <TextField
+                    <input
+                        className='form-input'
                         type='email'
                         placeholder='email'
                         value={this.state.email}
                         onChange={this.updateEmail}
                     />
-                    <TextField
+                    <input
+                        className='form-input'
                         type='text'
                         placeholder='password'
                         value={this.state.password}
                         onChange={this.updatePassword}
                     />
-                    <TextField
+                    <input
+                        className='form-input'
                         type='text'
                         placeholder='confirmPassword'
                         value={this.state.confirmPassword}
                         onChange={this.updateConfirmPassword}
                     />
-                    <Button type='submit'>Sign Up!</Button>
+                    <button className='form-button' type='submit'>Sign Up!</button>
                 </form>
             </main>
         )
     }
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({ auth }) => {
     return {
         loggedIn: !!auth.id,
     };
@@ -102,4 +105,4 @@ const mapDispatchToProps = dispatch => {
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignupFormControl);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

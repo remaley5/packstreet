@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { saveCurrentDesign } from '../../../store/reducers/design';
 
 const categories = ['Size', 'Material', 'Quantity', 'Unit price', 'Subtotal']
@@ -11,7 +12,8 @@ class InfoBarRight extends Component {
     }
 
     handleClick = () => {
-        this.props.saveCurrentDesign(this.props.userId, this.props.designState)
+        this.props.saveCurrentDesign(this.props.userId, this.props.designState);
+
     }
     render() {
         return (
@@ -25,15 +27,15 @@ class InfoBarRight extends Component {
                                     categories.map((category, i) => {
                                         return (
                                             <tr>
-                                                <th className='info-bar-right__category'>{category}</th>
-                                                <td className='info-bar-right__value'>{values[i]}</td>
+                                                <th className='info-bar-right__category' key={`category${i}`}>{category}</th>
+                                                <td className='info-bar-right__value' key={`values${i}`}>{values[i]}</td>
                                             </tr>
                                         )
                                     })
                                 }
                             </tbody>
                         </table>
-                        <button className='design-page__info-bar-right__button' onClick={this.handleClick}>Save</button>
+                        <NavLink to='/my-packages' className='design-page__info-bar-right__button' onClick={this.handleClick}>Save</NavLink>
                 </div>
             </>
         )

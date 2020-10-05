@@ -16,10 +16,10 @@ class HomePage extends Component {
   render() {
     return (
       <main className='landing-page'>
-        <Container>
-          <LoginForm />
-          <SignupForm />
-        </Container>
+        <div className='landing-page__container'>
+          <LoginForm className='landing-page__form-container' />
+          <SignupForm className='landing-page__form-container' />
+        </div>
       </main>
     );
   }
