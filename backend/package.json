@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend",
     "db:create": "dotenv sequelize-cli db:create",
     "db:drop": "dotenv sequelize-cli db:drop",
     "db:migrate": "dotenv sequelize-cli db:migrate",

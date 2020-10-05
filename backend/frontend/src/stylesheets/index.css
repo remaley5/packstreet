@@ -1,0 +1,48 @@
+/* Material UI fonts: */
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+/* Font Icons: */
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+/* SVG Icons: npm install @material-ui/icons */
+@import url('./hompage.css');
+@import url('./navbar.css');
+@import url('./packageBases.css');
+@import url('./designPage.css');
+@import url('./designRender.css');
+@import url('./savedDesigns.css');
+@import url('./landingPage.css');
+
+.section-header {
+    margin-top: 0;
+    padding-top: 100px;
+    color: #2e469e;
+    font-size: 58px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .section-description {
+    width: 700px;
+    margin: 0px 0px 50px 0px;
+    color: #575b5e;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+  }
+
+.section-button {
+  color: #2e469e;
+    background-color: white;
+    text-decoration: none;
+    height: 63px;
+    padding: 20px 30px;
+    border: none;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .section-button:hover {
+    background-color: #2e469e;
+    color: white;
+  }
