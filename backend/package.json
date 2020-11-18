@@ -42,5 +42,9 @@
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
     "dotenv-cli": "^3.1.0"
-  }
+  },
+  "description": "This is the backend for the Solo React project.",
+  "main": "app.js",
+  "author": "",
+  "license": "ISC"
 }

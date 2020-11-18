@@ -11,6 +11,11 @@ const app = express();
 
 const routes = require('./routes');
 
+// app.listen(3000, function () {
+//   console.log("Express server listening on port 3000");
+//   });
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -23,7 +28,7 @@ app.use(helmet({ hsts: false }));
 
 //this will create a _csrf cookie on browser after a fetch call. This cookie is then compared to the cookie provided by req.csrfToken() function
 
-app.use(routes);
+app.use('/', routes);
 
 // Serve React Application
 // This should come after routes, but before 404 and error handling.
